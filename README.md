@@ -1,0 +1,2 @@
+# adProject_Client
+adProject项目基于Ionic2开发的移动端
