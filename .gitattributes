@@ -1,3 +1,5 @@
-*.ts linguist-language=JavaScript
-*.scss linguist-language=JavaScript
-*.html linguist-language=JavaScript
+*.ts linguist-language=TypeScript
+*.scss linguist-language=TypeScript
+*.html linguist-language=TypeScript
+*.c linguist-language=TypeScript
+*.cpp linguist-language=TypeScript
