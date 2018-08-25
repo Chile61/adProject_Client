@@ -1,0 +1,49 @@
+<!-- Generated template for the HomeInfo component -->
+<ion-slides class="slide-ad" loop zoom autoplay="3000" *ngIf="canShow">
+    <ion-slide *ngFor="let item of adInfo | filterADType:'图片广告':'首页滚动';">
+        <ion-thumbnail (click)="onClickItem(item)">
+          <img [src]="item?.image">
+        </ion-thumbnail>
+    </ion-slide>
+</ion-slides>
+<ion-grid *ngIf="canShow">
+  <ion-row>
+    <ion-col col-4 align-self-start>
+      <img class="notice-img" src="assets/imgs/notice.png"/>
+    </ion-col>
+    <ion-col style="text-align: center">
+      <ion-slides class="slide-notice" #mySliderNotice loop zoom autoplay="3000" direction="vertical">
+          <ion-slide *ngFor="let item of adInfo | filterADType:'文字公告':'首页公告';">
+            <div>
+            <ion-item>
+              <h6 item-start></h6>
+              <span>{{item?.title}}</span>
+            </ion-item>
+            </div>
+          </ion-slide>
+      </ion-slides>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col [ngClass]="['col-'+item.col]" *ngFor="let item of adInfo | filterADType:'图片广告':'首页图片一';" >
+      <ion-thumbnail>
+        <img [src]="item?.image" />
+      </ion-thumbnail>
+    </ion-col>
+  </ion-row>
+  <ion-row text-wrap>
+    <ion-col [ngClass]="['col-'+item.col]" *ngFor="let item of adInfo | filterADType:'图片广告':'首页图片二';" >
+      <ion-thumbnail>
+        <img [src]="item?.image" />
+      </ion-thumbnail>
+    </ion-col>
+  </ion-row>
+  <ion-row text-wrap>
+    <ion-col [ngClass]="['col-'+item.col]" *ngFor="let item of adInfo | filterADType:'图片广告':'首页图片三';" >
+      <ion-thumbnail>
+        <img [src]="item?.image" />
+      </ion-thumbnail>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+

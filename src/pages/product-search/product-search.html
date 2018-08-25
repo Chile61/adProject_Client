@@ -1,0 +1,30 @@
+<!--
+  Generated template for the ProductSearchPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>商品搜索</ion-title>
+    <ion-buttons end>
+      <ion-searchbar (ionInput)="searchProduct($event)"></ion-searchbar>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-6 *ngFor="let item of productInfo" (click)="clickProduct(item)">
+        <ion-thumbnail>
+          <img [src]="item.productImage[0]?.image">
+        </ion-thumbnail>
+        <div class="product-name-show"><span>{{item?.name}}</span></div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

@@ -1,0 +1,9 @@
+<!-- Generated template for the ClassificationLeftComponent component -->
+<div class="leftmenu">
+  <ion-list>
+    <ion-item id="menuinfo" *ngFor="let item of classificationInfo" (click)="onClickItem(item)"
+              [ngClass]="{'selected':selectItem==item}">
+      {{ item.name }}
+    </ion-item>
+  </ion-list>
+</div>

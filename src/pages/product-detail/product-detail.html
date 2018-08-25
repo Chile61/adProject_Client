@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{productItem.name}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-slides class="slide-ad" loop zoom autoplay="3000" *ngIf="productItem.productImage.length>0">
+    <ion-slide *ngFor="let item of productItem.productImage">
+      <ion-thumbnail>
+        <img [src]="item.image">
+      </ion-thumbnail>
+    </ion-slide>
+  </ion-slides>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-row>
+          <span>{{productItem.name}}</span>
+        </ion-row>
+        <ion-row *ngIf="productItem.showPice">
+          <span class="lowPrice"><b>￥{{productItem.lowPice}}</b></span>
+        </ion-row>
+        <ion-row *ngIf="productItem.showPice">
+          <span class="highPrice">￥{{productItem.highPice}}</span>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item text-wrap>
+          <ion-thumbnail item-start>
+            <img src="assets/imgs/tag.png"/>
+          </ion-thumbnail>
+          <div padding [innerHTML]="assembleHTML(productItem.description)"></div>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        商品信息
+      </ion-col>
+    </ion-row>
+    <ion-row *ngFor="let item of productItem.productParam">
+      <ion-col col-4>
+        【{{item.param}}】
+      </ion-col>
+      <ion-col>
+        {{item.description}}
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+</ion-content>
+
+<ion-footer>
+  <ion-item>
+    <ion-icon name="cart" item-start><sup *ngIf="globalService.shopCartCount!=0">{{globalService.shopCartCount}}</sup></ion-icon>
+    <button ion-button item-end (click)="buy()" clear color="dark">加入购物车</button>
+  </ion-item>
+</ion-footer>

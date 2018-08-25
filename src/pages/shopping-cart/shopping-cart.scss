@@ -1,0 +1,22 @@
+page-shopping-cart {
+  .show-num{
+    display: inline-block;
+    width: 22px;
+    text-align:center;
+    font-size: 1.5em;
+  }
+  .show-num-remove{
+    font-size: 1.5em;
+    color: #ccc;
+  }
+  .show-num-add{
+    font-size: 1.5em;
+    color: #ff131a;
+  }
+  .shopping-cart-count{
+    text-align: right;
+  }
+  .col-text{
+    text-align: center;
+  }
+}

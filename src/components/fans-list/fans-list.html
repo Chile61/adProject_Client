@@ -1,0 +1,36 @@
+<!-- Generated template for the ResponsibilityList component -->
+
+<ion-list>
+  <ion-item-sliding *ngFor="let item of info;let oo = odd; let ee = even;" [ngClass]="{'even-active':ee,'odd-active':oo}">
+      <ion-item (click)="onClickItem(item)" [ngClass]="{'even-active':ee,'odd-active':oo}">
+        <ion-avatar item-start>
+          <img [src]="item.avatar">
+        </ion-avatar>
+        <ion-grid>
+          <ion-row>
+            <ion-col align-self-center id="title" text-wrap col-4>
+              <span>{{item.account}}</span>
+            </ion-col>
+            <ion-col align-self-center col-4>
+              <span>{{item.levelShow}}</span>
+            </ion-col>
+            <ion-col align-self-center text-wrap col-4>
+              <span>{{item.createtime}}</span>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+    <!--</ion-item>-->
+    <ion-item-options>
+      <button ion-button icon-left (click)="onClickShowDetail(item)">
+        <ion-icon name="alarm"></ion-icon>
+        详&nbsp;&nbsp;&nbsp;&nbsp;情
+      </button>
+      <button ion-button color="secondary" icon-left (click)="onClickTransfer(item)">
+        <ion-icon name="create"></ion-icon>
+        转&nbsp;&nbsp;&nbsp;&nbsp;账
+      </button>
+    </ion-item-options>
+  </ion-item-sliding>
+
+</ion-list>

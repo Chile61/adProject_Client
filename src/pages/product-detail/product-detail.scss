@@ -1,0 +1,28 @@
+page-product-detail {
+  .lowPrice{
+    color: red;
+    font-size:2.1rem;
+    font-style:inherit;
+  }
+  .highPrice{
+    color: #c8c8c8;
+    text-decoration:line-through;
+    font-style: italic;
+    margin-left: 1.5rem
+  }
+
+  .slide-ad {
+    width: 100%;
+    height: 20rem;
+    color: #666666;
+    padding: 0;
+  }
+  sup{
+    font-size: 0.5em;
+    background: red;
+    color: white;
+    border-radius: 5px; /*圆角*/
+    padding: 0px 3px; /*左右边距*/
+    top: -1em; /*数字离图片右上角的高度*/
+  }
+}

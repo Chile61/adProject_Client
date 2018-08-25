@@ -1,0 +1,15 @@
+
+<ion-header>
+  <ion-navbar>
+    <button ion-button block color="light" small outline (click)="goProductSearch()">
+      <ion-icon name='search'></ion-icon>
+      搜索喜欢的宝贝
+    </button>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <classification-left [classificationInfo]="shopTypeList" (clickItem)="onClickType($event)"></classification-left>
+  <classification-shop [classificationShopBannerAD]="adBanner" [classificationShopInfo]="shopList" (clickItem)="onClickShop($event)"></classification-shop>
+</ion-content>

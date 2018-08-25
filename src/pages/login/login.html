@@ -1,0 +1,29 @@
+<ion-content padding [ngStyle]="{'background-image': 'url(' + imgBlackground + ')','background-size':'cover','background-color':'#289abd'}">
+  <ion-grid>
+    <ion-row class="input-box">
+      <ion-col>
+        <form (ngSubmit)="login()" #userForm="ngForm">
+          <div class="login-main margin-center">
+            <ion-list>
+              <ion-item class="input_opacity">
+                <ion-label><img src="assets/imgs/user.png"></ion-label>
+                <ion-input type="text" id="name" required [(ngModel)]="userName" name="name" placeholder="用户名" maxlength="20"
+                           #name="ngModel"></ion-input>
+              </ion-item>
+              <ion-item class="input_opacity">
+                <ion-label><img src="assets/imgs/password.png"></ion-label>
+                <ion-input type="password" id="password" required [(ngModel)]="userPassword" placeholder="密码" maxlength="20"
+                           name="password"></ion-input>
+              </ion-item>
+              <p></p>
+            </ion-list>
+          </div>
+          <br>
+          <button id="login" ion-button type="submit" block >登陆</button>
+        </form>
+        <button ion-button block (click)="register()">注册</button>
+        <button ion-button block (click)="scanRegister()">{{buttonText}}</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

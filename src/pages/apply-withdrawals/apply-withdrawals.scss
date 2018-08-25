@@ -1,0 +1,25 @@
+page-apply-withdrawals {
+  .col-show-purse{
+    text-align: center;
+  }
+  .img-show-purse{
+    max-height: 18em;
+  }
+  .span-show-points{
+    font-size: 1.5em;
+    color: #00cad2;
+  }
+  .span-show-points-text{
+    font-size: 0.9em;
+    color: #6b6b6b;
+  }
+  .item-md ion-avatar{
+    min-width:1.3em;
+    min-height: 1.3em;
+  }
+  .item-input .label-md,
+  .item-select .label-md,
+  .item-datetime .label-md {
+    color: #222;
+  }
+}

@@ -1,0 +1,286 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>个人中心</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="outer-content">
+  <ion-grid class="grid-header" *ngIf="isShow">
+    <ion-row>
+      <ion-col align-self-center class="col-center">
+        <img class="personImage" *ngIf="userInfo?.avatar==''" src="assets/imgs/my-info-circle.png">
+        <!--<img class="personImage" *ngIf="icon==''" src="assets/img/my-info-towel.png"/>-->
+        <img class="personImage" *ngIf="userInfo?.avatar!=''" [src]="userInfo?.avatar"/>
+      </ion-col>
+      <ion-col align-self-center class="col-personal-center">
+        {{userInfo?.account}}<br>
+        {{userInfo?.levelShow}}
+      </ion-col>
+    </ion-row>
+    <ion-row class="col-header-foot">
+      <ion-col align-self-center col-3>
+        <span>{{userInfo?.points}}</span>
+      </ion-col>
+      <ion-col align-self-center col-3>
+        <span>{{userInfo?.cloudPoints}}</span>
+      </ion-col>
+      <ion-col align-self-center col-3>
+        {{userInfo?.onlyPayPoints}}
+      </ion-col>
+      <ion-col align-self-center col-3>
+        {{userInfo?.cash}}
+      </ion-col>
+    </ion-row>
+    <ion-row class="col-header-foot">
+      <ion-col align-self-center col-3>
+        <span>积分账户</span>
+      </ion-col>
+      <ion-col align-self-center col-3>
+        <span>云积分</span>
+      </ion-col>
+      <ion-col align-self-center col-3>
+        <span>购物积分</span>
+      </ion-col>
+      <ion-col align-self-center col-3>
+        <span>现金账户</span>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid *ngIf="isShow">
+    <ion-row>
+      <ion-col>
+        <ion-slides class="slide-title" [pager]="false" loop zoom autoplay="3000">
+          <ion-slide>
+            <ion-grid>
+              <ion-row class="span-show-points">
+                <ion-col>
+                  <span>上一天新增积分总额</span><br>
+                  <span>{{rechargeWithdrawSumLogInfo?.recharge}}</span>
+                </ion-col>
+                <ion-col>
+                  <span>上一天转换云积分总额</span><br>
+                  <span>{{conversionSumLogInfo?.dailyCloudConverPoints+conversionSumLogInfo?.dailyConsumptionConverPoints}}</span>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-slide>
+          <ion-slide>
+            <ion-grid>
+              <ion-row class="span-show-points">
+                <ion-col>
+                  <span>上一天提现总额</span><br>
+                  <span>{{rechargeWithdrawSumLogInfo?.withdraw}}</span>
+                </ion-col>
+                <ion-col>
+                  <span>上一天积分转换系数</span><br>
+                  <span>{{conversionSumLogInfo?.dailyCloudConversionRate+conversionSumLogInfo?.dailyConsumptionConversionRate}}</span>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-slide>
+        </ion-slides>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid>
+    <ion-row class="p-content-line-row">
+      <ion-col col-3 class="padding-col">
+        <ion-row>
+          <ion-col>
+            <button ion-button color="c3" (click)="goOther('pointsAccount')">
+              <ion-icon name="logo-bitcoin"></ion-icon>
+            </button>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            积分账户
+          </ion-col>
+        </ion-row>
+      </ion-col>
+      <ion-col col-3 class="padding-col">
+        <ion-row>
+          <ion-col>
+            <button ion-button color="c3" (click)="goOther('cloudPointsAccount')">
+              <ion-icon name="card"></ion-icon>
+            </button>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            云积分账户
+          </ion-col>
+        </ion-row>
+      </ion-col>
+      <ion-col col-3 class="padding-col">
+        <ion-row>
+          <ion-col>
+            <button ion-button color="c3" (click)="goOther('shoppingPointsAccount')">
+              <ion-icon name="cash"></ion-icon>
+            </button>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            购物积分
+          </ion-col>
+        </ion-row>
+      </ion-col>
+      <ion-col col-3 class="padding-col">
+        <ion-row>
+          <ion-col>
+            <button ion-button color="c3" (click)="goOther('personalFans')">
+              <ion-icon name="people"></ion-icon>
+            </button>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            我的粉丝
+          </ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+    <ion-row class="p-content-line-row">
+      <ion-col col-3 class="padding-col">
+        <ion-row>
+          <ion-col>
+            <button ion-button color="c3" (click)="goOther('applyRecharge')">
+              <ion-icon name="logo-yen"></ion-icon>
+            </button>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            申请冲值
+          </ion-col>
+        </ion-row>
+      </ion-col>
+      <ion-col col-3 class="padding-col">
+        <ion-row>
+          <ion-col>
+            <button ion-button color="c3" (click)="goOther('applyWithdrawals')">
+              <ion-icon name="swap"></ion-icon>
+            </button>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            申请提现
+          </ion-col>
+        </ion-row>
+      </ion-col>
+      <ion-col col-3 class="padding-col">
+        <ion-row>
+          <ion-col>
+            <button ion-button color="c3" (click)="goOther('myOrder')">
+              <ion-icon name="cart"></ion-icon>
+            </button>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            我的订单
+          </ion-col>
+        </ion-row>
+      </ion-col>
+      <ion-col col-3 class="padding-col">
+        <ion-row>
+          <ion-col>
+            <button ion-button color="c3">
+              <ion-icon name="store"></ion-icon>
+            </button>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            我的店铺
+          </ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid class="grid-list">
+    <ion-row>
+      <ion-col class="p-content-row-line"></ion-col>
+    </ion-row>
+    <ion-row (click)="goOther('certification')" align-items-center class="ion-row-border-solid-right">
+      <ion-col align-self-center>
+        <ion-icon name="card" color="c2"></ion-icon>
+        <span>用户认证</span>
+      </ion-col>
+      <ion-col align-self-center>
+        <ion-label>
+          <img class="p-content-col-image-1" src="assets/imgs/my-info-right-arrow.png">
+        </ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row (click)="goOther('QRCode')" align-items-center class="ion-row-border-solid-right">
+      <ion-col align-self-center>
+        <ion-icon name="QRCode" color="c3"></ion-icon>
+        <span>我的二维码</span>
+      </ion-col>
+      <ion-col align-self-center>
+        <ion-label>
+          <img class="p-content-col-image-1" src="assets/imgs/my-info-right-arrow.png">
+        </ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row (click)="goOther('person')" align-items-center class="ion-row-border-solid-right">
+      <ion-col align-self-center>
+        <ion-icon name="viewlist" color="primary"></ion-icon>
+        <span>活动列表</span>
+      </ion-col>
+      <ion-col align-self-center>
+        <ion-label>
+          <img class="p-content-col-image-1" src="assets/imgs/my-info-right-arrow.png">
+        </ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row (click)="goOther('person')" align-items-center class="ion-row-border-solid-right">
+      <ion-col align-self-center>
+        <ion-icon name="creditlevel" color="c3"></ion-icon>
+        <span>会员升级</span>
+      </ion-col>
+      <ion-col align-self-center>
+        <ion-label>
+          <img class="p-content-col-image-1" src="assets/imgs/my-info-right-arrow.png">
+        </ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row (click)="goOther('person')" align-items-center class="ion-row-border-solid-right">
+      <ion-col align-self-center>
+        <ion-icon name="exit" color="primary"></ion-icon>
+        <span>安全退出</span>
+      </ion-col>
+      <ion-col align-self-center>
+        <ion-label>
+          <img class="p-content-col-image-1" src="assets/imgs/my-info-right-arrow.png">
+        </ion-label>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-row>
+    <ion-col class="p-content-row-line"></ion-col>
+  </ion-row>
+
+  <ion-row (click)="updateVersion()" align-items-center class="ion-row-border-solid-right">
+    <ion-col align-self-center>
+      <ion-icon name="star" color="" color="danger"></ion-icon>
+      <span>检查版本</span>
+    </ion-col>
+    <ion-col class="ion-col-border-solid-right" align-self-center>
+      <ion-label>
+        当前版本 {{myAppVersion}}
+        <img class="p-content-col-image-1" src="assets/imgs/my-info-right-arrow.png">
+      </ion-label>
+    </ion-col>
+  </ion-row>
+
+</ion-content>
+
+
+
+

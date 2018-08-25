@@ -1,0 +1,66 @@
+page-order-create {
+  .grid{
+    background-color: #ffffff;
+    border-bottom: 1px solid #959298;
+    border-top: 1px solid #959298;
+    padding: 0px;
+  }
+  .col-padding-right{
+    padding-right: 10px;
+  }
+  .col-padding-left{
+    padding-left: 10px;
+  }
+  .content-md{
+    background-color: #e7e7e7;
+  }
+
+  .product-row{
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .row-title{
+    background-color: #d5d5d5;
+  }
+
+  .line_bottom{
+    border-bottom: 1px solid #e7e2ec;
+  }
+
+  .bottom_info{
+    border-bottom: 1px solid #e7e2ec;
+    height: 40px;
+  }
+  ion-footer {
+    height:60px;
+  }
+
+  ion-select{
+    max-width: 100%;
+  }
+  .col-address{
+    font-size: 1.8em;
+    font-weight:bold
+  }
+  .col-mobile{
+    font-size: 1.8em;
+    font-weight:bold
+  }
+  .count-info{
+    text-align: right;
+    color: red;
+  }
+  .button-pay{
+    padding: 0;
+    background-color: #111111;
+  }
+
+  .col-padding-show{
+    height: 100%;padding: 0;
+  }
+
+  .pay-list{
+    text-align: right;
+  }
+}

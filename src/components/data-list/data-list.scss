@@ -1,0 +1,50 @@
+data-list {
+  .grid{
+    padding: 0;
+  }
+  .even-active{
+    background-color: #F2F2F2;
+  }
+  .odd-active{
+    background-color: #FFFFFF;
+  }
+  .button-have-ico{
+    border-radius: 100%;
+  }
+  .button-word{
+    width: 2em;
+    height: 2em;
+    border-radius: 100%;
+  }
+  .affix-button{
+    background-color: #9a1211;
+  }
+  [icon-left] ion-icon,
+  [icon-start] ion-icon {
+    padding-right: 0;
+  }
+  em{
+    background-color: #ff5000;
+    width: 18px;
+    height: 18px;
+    text-align: center;
+    border-radius: 100%;
+    position:absolute;
+    line-height: 18px;
+    color: #fff;
+    right:1px;
+    top:1px;
+    font-size: 0.8em;
+  }
+
+  .col-cb{
+    padding: 0;
+    margin-right: 10px;
+    min-height: 0;
+  }
+
+  .outlinedB{color: hsl(21, 100%, 56%);
+  }
+
+  .dilate{color:red;}
+}

@@ -1,0 +1,47 @@
+
+page-login {
+
+  .input-box{
+    margin-top: 18em;
+  }
+
+  .text-input::-moz-placeholder {
+    color: #fff;
+  }
+
+  .text-input:-ms-input-placeholder {
+    color: #fff;
+  }
+
+  .text-input::-webkit-input-placeholder {
+    text-indent: 0;
+    color: #fff;
+  }
+  .col{
+    text-align: center;
+  }
+  .list-md{
+    margin: 10px 0 10px;
+  }
+
+  .logo_img {
+    border-width: 0;
+    width: 12.3125rem;
+    height: 12.3125rem;
+  }
+  .input_opacity{
+    background-color: transparent;
+  }
+
+  .login-main{
+    box-sizing: border-box;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.5);
+    border:1px solid #fff;
+    margin:50px auto 0 auto
+  }
+  .margin-center{
+    margin-left:auto;
+    margin-right:auto
+  }
+}

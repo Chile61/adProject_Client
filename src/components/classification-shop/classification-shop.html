@@ -1,0 +1,27 @@
+<div class="div-shop-show">
+  <ion-grid>
+    <ion-row>
+      <ion-col align-self-start col-12 *ngFor="let item of classificationShopBannerAD">
+        <ion-thumbnail>
+          <img [src]="item?.image"/>
+        </ion-thumbnail>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-4 *ngFor="let item of classificationShopInfo" (click)="onClickItem(item)">
+        <ion-row>
+          <ion-col>
+            <ion-thumbnail>
+              <img [src]="item.logo"/>
+            </ion-thumbnail>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col class="show-name">
+            <span>{{item.name}}</span>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</div>

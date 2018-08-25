@@ -1,0 +1,52 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>注册</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-row class="account-form">
+    <ion-col>
+      <form (ngSubmit)="onSubmit()" #regeditForm="ngForm">
+        <ion-list inset>
+          <ion-item>
+            <ion-label><ion-icon name="person"></ion-icon></ion-label>
+            <ion-input [(ngModel)]="info.account" [rangeLength]="[5, 10]" required placeholder="用户名" maxlength="16" name="account" #account="ngModel"></ion-input>
+          </ion-item>
+          <p class="text-danger" *ngIf="account.errors?.rangeLength">用户名长度在5-10之间</p>
+
+          <ion-item>
+            <ion-label><ion-icon name="phone-portrait"></ion-icon></ion-label>
+            <ion-input [(ngModel)]="info.phone" required placeholder="手机号码" type="tel" name="phone" maxlength="11" #phone="ngModel" phone="CN"></ion-input>
+          </ion-item>
+          <p class="text-danger" *ngIf="phone.errors?.phone">手机号码输入不正确</p>
+
+          <ion-item>
+            <ion-label><ion-icon name="lock"></ion-icon></ion-label>
+            <ion-input [(ngModel)]="info.password" [rangeLength]="[6, 16]" required placeholder="密码" maxlength="16" type="password" name="new" #new="ngModel"></ion-input>
+          </ion-item>
+          <p class="text-danger" *ngIf="new.errors?.rangeLength">密码长度在6-16之间</p>
+
+          <ion-item>
+            <ion-label><ion-icon name="lock"></ion-icon></ion-label>
+            <ion-input [(ngModel)]="confirmPassword" required placeholder="确认密码" type="password" [equalTo]="new" name="confirm" #confirm="ngModel"></ion-input>
+          </ion-item>
+          <p class="text-danger" *ngIf="confirm.errors?.equalTo && !confirm.pristine "> 两次输入的密码不一至.</p>
+
+          <ion-item>
+            <ion-label><ion-icon name="person"></ion-icon></ion-label>
+            <ion-input [(ngModel)]="info.superior" placeholder="推荐人" maxlength="11" type="text" name="referral" #referral="ngModel"></ion-input>
+          </ion-item>
+
+        </ion-list>
+      </form>
+
+      <button ion-button (click)="register()" class="continue-button" [disabled]="!regeditForm.form.valid">提交注册</button>
+    </ion-col>
+  </ion-row>
+
+</ion-content>

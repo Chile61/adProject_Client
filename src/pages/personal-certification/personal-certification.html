@@ -1,0 +1,58 @@
+<!--
+  Generated template for the PersonalCertificationPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>个人身份认证</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-row>
+        <ion-col col-3>状态：</ion-col>
+        <ion-col>{{stateShow}}</ion-col>
+      </ion-row>
+    </ion-item>
+    <ion-item>
+      <ion-row>
+        <ion-col col-3>账号名：</ion-col>
+        <ion-col>{{userInfo?.account}}</ion-col>
+      </ion-row>
+    </ion-item>
+    <ion-item>
+      <ion-row>
+        <ion-col col-3>姓名</ion-col>
+        <ion-col>{{userInfo?.name}}</ion-col>
+      </ion-row>
+    </ion-item>
+    <ion-item>
+      <ion-row>
+        <ion-col col-3>生日：</ion-col>
+        <ion-col>{{userInfo?.birthday}}</ion-col>
+      </ion-row>
+    </ion-item>
+    <ion-item>
+      <ion-row>
+        <ion-col col-3>手机号：</ion-col>
+        <ion-col>{{userInfo?.phone}}</ion-col>
+      </ion-row>
+    </ion-item>
+    <ion-item>
+      <ion-row>
+        <ion-col col-3>身份号：</ion-col>
+        <ion-col>{{userInfo?.cardID}}</ion-col>
+      </ion-row>
+    </ion-item>
+    <ion-row>
+      <ion-col class="p-content-row-line"></ion-col>
+    </ion-row>
+    <button ion-button block *ngIf="!state" (click)="toCertificationDetail()">认证</button>
+  </ion-list>
+</ion-content>

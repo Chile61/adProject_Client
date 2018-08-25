@@ -1,0 +1,26 @@
+page-shop {
+  .slide-title {
+    width: 100%;
+    height: 3rem;
+    color: #666666;
+    padding: 0;
+  }
+
+  .slide-title-unit {
+    padding-bottom: 0.8rem;
+    font-size: 1.1rem;
+    height: 3rem;
+    line-height: 1.3rem;
+  }
+
+  .slide-title-active {
+    color: map_get($colors, primary);
+    border-bottom: 3px solid map_get($colors, primary);
+  }
+
+  .product-name-show{
+    width: 100%;
+    margin-top: 4px;
+    text-align: center
+  }
+}

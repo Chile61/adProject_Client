@@ -1,0 +1,63 @@
+// http://ionicframework.com/docs/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+@font-face {
+  font-family: "Ionicons";
+  src: url('../assets/myicon1/iconfont.eot?t=1481782193096'); /* IE9*/
+  src: url('../assets/myicon1/iconfont.eot?t=1481782193096#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('../assets/myicon1/iconfont.woff?t=1481782193096') format('woff'), /* chrome, firefox */
+  url('../assets/myicon1/iconfont.ttf?t=1481782193096') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('../assets/myicon1/iconfont.svg?t=1481782193096#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.icon {
+  display: inline-block;
+  font-family: "Ionicons";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  text-rendering: auto;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.ion-md-QRCode:before,
+.ion-ios-QRCode:before,
+.ion-ios-QRCode-outline:before {
+  content: "\e6a9";
+}
+
+.ion-md-store:before,
+.ion-ios-store:before,
+.ion-ios-store-outline:before {
+  content: "\e722";
+}
+
+
+.ion-md-viewlist:before,
+.ion-ios-viewlist:before,
+.ion-ios-viewlist-outline:before {
+  content: "\e6b5";
+}
+
+.ion-md-creditlevel:before,
+.ion-ios-creditlevel:before,
+.ion-ios-creditlevel-outline:before {
+  content: "\e735";
+}

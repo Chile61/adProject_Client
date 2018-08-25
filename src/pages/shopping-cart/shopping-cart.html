@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>购物袋</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-grid *ngIf="shoppingCartList.length==0">
+    <ion-row>
+      <ion-col class="col-text">
+        <img src="assets/imgs/wudingdan.png"/>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="col-text">
+        暂无订单信息
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-list *ngIf="shoppingCartList.length!=0">
+    <ion-item-sliding *ngFor="let item of shoppingCartList;let i=index">
+      <ion-item text-wrap>
+        <ion-thumbnail item-start>
+          <img [src]="item.productInfo.productImage[0].image" *ngIf="item.productInfo.productImage.length>0"/>
+        </ion-thumbnail>
+        <ion-row>
+          <span>{{item.productInfo.name}}</span>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <span item-start>￥{{item.productInfo.lowPice}}</span>
+          </ion-col>
+
+          <ion-col col-auto>
+            <ion-icon tappable name="remove-circle" class="show-num-remove" (tap)="cartRemove(item)"></ion-icon>
+            <span class="show-num">{{item.num}}</span>
+            <ion-icon tappable name="add-circle" class="show-num-add" (tap)="cartAdd(item)"></ion-icon>
+          </ion-col>
+        </ion-row>
+      </ion-item>
+      <ion-item-options>
+        <button ion-button color="danger" icon-left (tap)="deleteFromCart(i,item);">
+          删除
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>
+
+<ion-footer >
+  <ion-grid  *ngIf="countMoney>0">
+    <ion-row>
+      <ion-col align-self-center>
+        <ion-row>
+          <ion-col class="shopping-cart-count">总额：￥{{countMoney}} &nbsp;&nbsp;获得积分：￥{{countPoint}}</ion-col>
+        </ion-row>
+      </ion-col>
+      <ion-row>
+        <ion-col>
+          <button *ngIf="countMoney>0" ion-button (click)="createOrder()">去结算</button>
+        </ion-col>
+      </ion-row>
+    </ion-row>
+  </ion-grid>
+</ion-footer>

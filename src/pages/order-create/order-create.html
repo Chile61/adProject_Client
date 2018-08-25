@@ -1,0 +1,99 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>提交订单</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-grid (click)="selectAddress()">
+    <ion-row>
+      <ion-col col-auto align-self-center class="col-padding-left">
+        <ion-icon name="pin" style="font-size: 2.2em"></ion-icon>
+      </ion-col>
+      <ion-col>
+        <ion-row>
+          <ion-col class="col-address">{{orderCreate.shipName}}</ion-col>
+          <ion-col col-auto class="col-mobile">{{orderCreate.shipMobile}}</ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col style="font-size: 0.8em;">收货地址：{{orderCreate.shipAddress}}</ion-col>
+        </ion-row>
+      </ion-col>
+      <ion-col col-auto align-self-center class="col-padding-right">
+        <ion-icon name="arrow-forward" style="font-size: 2.2em"></ion-icon>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-row style="height: 10px"></ion-row>
+
+  <ion-grid>
+    <ion-row class="row-title product-row">
+      <ion-col>
+        <span>订单信息</span>
+      </ion-col>
+      <ion-col>
+        <span></span>
+      </ion-col>
+    </ion-row>
+    <ion-row class="line_bottom product-row" *ngFor="let item of orderCartList">
+      <ion-col col-3>
+        <ion-thumbnail>
+          <img [src]="item.productImage">
+        </ion-thumbnail>
+      </ion-col>
+      <ion-col align-self-center>
+        <span>{{item.productName}}</span>
+      </ion-col>
+      <ion-col col-auto align-self-center>
+        <ion-row>
+          <ion-col>
+            ￥{{item.productPrice*item.num}}
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            ×{{item.num}}
+          </ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+    <!--<ion-row class="bottom_info product-row" align-items-center>-->
+    <!--<ion-col col-auto>消费方式</ion-col>-->
+    <!--<ion-col align-self-center style="text-align: right">店购</ion-col>-->
+    <!--</ion-row>-->
+    <ion-row class="bottom_info product-row" align-items-center>
+      <ion-col col-auto>订单总计</ion-col>
+      <ion-col align-self-center style="text-align: right">￥{{countMoney}}</ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-row style="height: 10px"></ion-row>
+
+  <ion-grid>
+    <ion-row class="row-title product-row">
+      <ion-col>
+        <span>支付方式</span>
+      </ion-col>
+      <ion-col class="pay-list">
+        <span>元宝</span>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+<ion-footer>
+  <ion-row class="col-padding-show">
+    <ion-col>
+      <ion-row>
+        <ion-col class="count-info" align-self-center>总计：￥{{countMoney}}</ion-col>
+        <ion-col col-3 class="button-pay" align-self-center>
+          <button ion-button clear (click)="submitOrder()">付款</button>
+        </ion-col>
+      </ion-row>
+    </ion-col>
+  </ion-row>
+</ion-footer>

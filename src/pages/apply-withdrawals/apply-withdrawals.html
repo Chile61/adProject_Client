@@ -1,0 +1,45 @@
+<!--
+  Generated template for the ApplyRechargePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>申请提现</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="showList()">
+        明细
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-grid>
+    <ion-row>
+      <ion-col class="col-show-purse">
+        <img class="img-show-purse" src="assets/imgs/getmoney.png">
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="col-show-purse">
+        <span class="span-show-points">{{accountInfo.cloudPoints}}</span><br>
+        <span class="span-show-points-text">现有云积分账户</span>
+      </ion-col>
+    </ion-row>
+    <ion-list>
+      <ion-item>
+        <ion-avatar item-start>
+          <ion-icon name="create" color="showarea"></ion-icon>
+        </ion-avatar>
+        <ion-label>提现金额</ion-label>
+        <ion-input type="text" value="" [(ngModel)]="applyCloudPointsNum"></ion-input>
+      </ion-item>
+    </ion-list>
+    <button ion-button (click)="applyCloudPoints()">申请提现</button>
+  </ion-grid>
+</ion-content>

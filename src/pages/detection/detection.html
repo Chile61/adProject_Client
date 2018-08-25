@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      发现
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="cards-bg">
+
+  <ion-card *ngFor="let item of detectionList" (click)="onClickDetection(item)">
+
+    <img [src]="item.image"/>
+
+    <ion-card-content>
+      <ion-card-title>
+        {{item.title}}
+      </ion-card-title>
+      <p>
+        {{item.content | sliceStr:0:40:'...' || '' }}
+      </p>
+    </ion-card-content>
+
+    <ion-row no-padding>
+      <ion-col col-6 text-wrap>
+        <button ion-button clear small color="danger" icon-start>
+          <ion-icon name='star'></ion-icon>
+          {{item.createTime}}
+        </button>
+      </ion-col>
+      <ion-col col-6 text-center>
+        <button ion-button clear small color="danger" icon-start>
+          <ion-icon name='person'></ion-icon>
+          {{item.user}}
+        </button>
+      </ion-col>
+      <!--<ion-col col-4 text-right>-->
+        <!--<button ion-button clear small color="danger" icon-start>-->
+          <!--<ion-icon name='share-alt'></ion-icon>-->
+          <!--分享-->
+        <!--</button>-->
+      <!--</ion-col>-->
+    </ion-row>
+  </ion-card>
+</ion-content>

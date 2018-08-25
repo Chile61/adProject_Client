@@ -1,0 +1,32 @@
+<!--
+  Generated template for the PointsAccountPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>冲值明细</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <log-list [logInfo]="rechargeListInfo"></log-list>
+  <ion-refresher class="refresh" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="arrow-dropdown"
+      pullingText="下拉刷新"
+      refreshingSpinner="circles"
+      refreshingText="刷新中....">
+    </ion-refresher-content>
+  </ion-refresher>
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+    <!-- <ion-infinite-scroll (ionInfinite)="$event.waitFor(doInfinite())">-->
+    <ion-infinite-scroll-content
+      loadingSpinner="bubbles"
+      loadingText="数据加载中...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

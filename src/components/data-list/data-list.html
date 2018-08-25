@@ -1,0 +1,28 @@
+<!-- Generated template for the WorkList component -->
+<ion-grid>
+  <ion-row *ngFor="let item of dataInfo;let oo = odd; let ee = even;" (click)="onClickItem(item)"
+           [ngClass]="{'even-active':ee,'odd-active':oo}">
+    <ion-col col-auto align-self-center>
+      <button ion-button icon-left [color]="item?.typeColor" class="button-word">
+        <span>{{item?.typeShow}}</span>
+      </button>
+    </ion-col>
+    <ion-col align-self-center>
+      <ion-row>
+        <ion-col>
+          <span>{{item?.description}}</span>
+        </ion-col>
+      </ion-row>
+    </ion-col>
+    <ion-col align-self-center>
+      <ion-row>
+        <ion-col>
+          <span>{{item?.points}}</span>
+        </ion-col>
+      </ion-row>
+    </ion-col>
+    <ion-col col-2 align-self-center>
+      <span>{{item?.dateTime}}</span>
+    </ion-col>
+  </ion-row>
+</ion-grid>

@@ -1,0 +1,67 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "com.synconset.imagepicker": {
+      "PACKAGE_NAME": "com.zy.starter"
+    },
+    "cordova-plugin-app-version": {
+      "PACKAGE_NAME": "com.zy.starter"
+    },
+    "cordova-plugin-camera": {
+      "PACKAGE_NAME": "com.zy.starter"
+    },
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "com.zy.starter"
+    },
+    "cordova-plugin-file": {
+      "PACKAGE_NAME": "com.zy.starter"
+    },
+    "cordova-plugin-file-opener2": {
+      "PACKAGE_NAME": "com.zy.starter"
+    },
+    "cordova-plugin-file-transfer": {
+      "PACKAGE_NAME": "com.zy.starter"
+    },
+    "cordova-plugin-filechooser": {
+      "PACKAGE_NAME": "com.zy.starter"
+    },
+    "cordova-plugin-filepath": {
+      "PACKAGE_NAME": "com.zy.starter"
+    },
+    "cordova-plugin-inappbrowser": {
+      "PACKAGE_NAME": "com.zy.starter"
+    },
+    "cordova-plugin-ionic-webview": {
+      "PACKAGE_NAME": "com.zy.starter"
+    },
+    "cordova-plugin-network-information": {
+      "PACKAGE_NAME": "com.zy.starter"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "com.zy.starter"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.zy.starter"
+    },
+    "ionic-plugin-keyboard": {
+      "PACKAGE_NAME": "com.zy.starter"
+    },
+    "phonegap-plugin-barcodescanner": {
+      "PACKAGE_NAME": "com.zy.starter"
+    },
+    "cordova-plugin-android-permissions": {
+      "PACKAGE_NAME": "com.zy.starter"
+    }
+  },
+  "dependent_plugins": {
+    "cordova-plugin-swift-support": {
+      "PACKAGE_NAME": "com.zy.starter"
+    }
+  }
+}

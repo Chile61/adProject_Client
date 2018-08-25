@@ -1,0 +1,44 @@
+<!--
+  Generated template for the AddressAddPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>添加地址</ion-title>
+
+    <ion-buttons end>
+      <button ion-button (click)="saveAddress()">
+        保存
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-label color="primary">收货人姓名</ion-label>
+      <ion-input placeholder="收货人姓名" [(ngModel)]="addressInfo.shipName"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label color="primary">详细地址</ion-label>
+      <ion-input placeholder="详细地址" [(ngModel)]="addressInfo.shipAddress"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label color="primary">联系电话</ion-label>
+      <ion-input placeholder="联系电话" [(ngModel)]="addressInfo.shipMobile"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>设为默认地址</ion-label>
+      <ion-checkbox color="primary" [checked]="false" [(ngModel)]="addressInfo.default"></ion-checkbox>
+    </ion-item>
+
+  </ion-list>
+</ion-content>

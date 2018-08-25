@@ -1,0 +1,13 @@
+page-detection-detail {
+  .item-md{
+    padding-left: 0;
+  }
+
+  .item-md ion-avatar ion-img,
+  .item-md ion-avatar img {
+    border-radius: 50%;
+    overflow: hidden;
+    width: 4em;
+    height: 4em;
+  }
+}
